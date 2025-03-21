@@ -3,10 +3,10 @@ const router = express.Router();
 const clienteController = require("../controllers/clienteController");
 
 // CRUD Clientes
-router.post('/', clienteController.criarCliente);       // POST /api/clientes
-router.get('/', clienteController.listarClientes);      // GET /api/clientes
-router.get('/:id', clienteController.listarClienteId);  // GET /api/clientes/1
-router.put('/:id', clienteController.atualizarCliente); // PUT /api/clientes/1
-router.delete('/:id', clienteController.deletarCliente);// DELETE /api/clientes/1
+router.post('/', clienteController.criarCliente);       
+router.get('/', clienteController.listarClientes);      
+router.get('/:id', clienteController.listarClienteId);  
+router.put('/:id', clienteController.atualizarCliente); 
+router.delete('/:id', clienteController.deletarCliente);
 
 module.exports = router;
