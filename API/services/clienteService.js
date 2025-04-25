@@ -34,9 +34,10 @@ async function listarClienteId(id) {
 }
 
 async function atualizarCliente(id, dados) {
-    const sql = "UPDATE Clientes SET ? WHERE id_cliente = ?";
+    const sql = "UPDATE Clientes SET nome_cliente = ?, telefone = ?, email = ? WHERE id_cliente = ?";
     try {
-        await conexao.query(sql, [dados, id]);
+        console.log(dados);
+        await conexao.query(sql, [dados.nome_cliente, dados.telefone, dados.email, dados.id_cliente]);
         return true;
     } catch (err) {
         console.error("Erro ao atualizar cliente:", err);
@@ -47,6 +48,7 @@ async function atualizarCliente(id, dados) {
 async function deletarCliente(id) {
     const sql = "DELETE FROM Clientes WHERE id_cliente = ?";
     try {
+        console.log(id);
         await conexao.query(sql, [id]);
         return true;
     } catch (err) {
